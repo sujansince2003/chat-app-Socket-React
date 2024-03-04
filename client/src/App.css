@@ -1,42 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.messages-container {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling for messages */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align messages to the left by default */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.send {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.sent,
+.received {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px; /* Space between messages */
 }
 
-.card {
-  padding: 2em;
+.sent {
+  align-self: flex-end; /* Align sent messages to the right */
 }
 
-.read-the-docs {
-  color: #888;
+.received {
+  align-self: flex-start; /* Align received messages to the left */
+}
+
+/* Style for messages */
+.sent p,
+.received p {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Style for messages sent */
+.sent p {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Style for messages received */
+.received p {
+  background-color: #f8f9fa;
+  color: black;
 }
